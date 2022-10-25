@@ -1,25 +1,6 @@
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-  } else {
-    return false;
-  }
-  return true;
-};
+const eqArrays = require('./eqArrays');
 
-const assertArraysEqual = function(array1,array2) {
-
-  let isEqual = eqArrays(array1, array2);
-  if (isEqual) {
-    console.log(`👌  Assertion Passed: ${array1} === ${array2}`);
-  } else {
-    console.log(`🤔  Assertion Failed: ${array1} !== ${array2}`);
-  }
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 
 const without = function(source, itemsToRemove) {
@@ -38,7 +19,5 @@ const without = function(source, itemsToRemove) {
   console.log(newArr);
 };
 
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+// Exports function
+module.exports = without;

@@ -14,11 +14,5 @@ const map = function(array, callback) {
   console.log('callback: ', callback);
 };
 
-const results1 = map(words, word => word[0]);
-console.log(results1);
-const results2 = map(words2, word => word[0]);
-console.log(results2);
-const results3 = map(words3, word => word.length);
-console.log(results3);
-const results4 = map(words4, word => word[word.length - 1 ]);
-console.log(results4);
+// Exports function
+module.exports = map;
